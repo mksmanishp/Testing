@@ -48,3 +48,27 @@ test("add item to array", () => {
   addToArray(testArray, "manish");
   expect(testArray).toContain("manish");
 });
+
+/// TDD -> TEST DRIVEN DEVELOPMENT
+// mainly focus on the unit test
+// write a test case and then you create or implement
+
+/// BDD -> behaviour driven development
+// as a scanario
+// a user ,want to login and access the account
+// scanario : succesful login
+// given the user is on the login page
+// when the user enters credenatils
+// then user should be redirected to dashboard
+
+// cucumber JS
+Given("the user is on the login page", () => {
+  //
+});
+When("the user enter credentails", () => {
+  //
+});
+
+Then("the verify and navigate to dashboard", () => {
+  //
+});
