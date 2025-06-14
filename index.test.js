@@ -2,6 +2,7 @@
 
 jest.mock("./mathUtils");
 const { calculate } = require("./app");
+const { addToArray } = require("./arrayUtils");
 const { add } = require("./mathUtils");
 const myModule = require("./spy");
 
@@ -23,3 +24,27 @@ test("should spy on fucntion and check if it is called", () => {
 });
 
 //Setup and TearDown
+let testArray;
+beforeAll(() => {
+  console.log("Before all tests : initailize the array");
+  testArray = [];
+});
+afterAll(() => {
+  console.log("After all tests : clear");
+  testArray = null;
+});
+
+beforeEach(() => {
+  console.log("before each tests : clear");
+  testArray = [];
+});
+
+afterEach(() => {
+  console.log("After each tests : clear");
+  console.log(testArray);
+});
+
+test("add item to array", () => {
+  addToArray(testArray, "manish");
+  expect(testArray).toContain("manish");
+});
